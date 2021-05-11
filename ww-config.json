@@ -1,0 +1,33 @@
+{
+    "componentPath": "./src/wwSection.vue",
+    "editor": {
+        "label": {
+            "en": "Website Loader"
+        },
+        "styleOptions": {
+            "backgroundColor": {
+                "type": "Color",
+                "label": {
+                    "en": "Text Background",
+                    "fr": "Background du Texte"
+                },
+                "bindable": true,
+                "options": {
+                    "nullable": true
+                }
+            }
+        },
+        "settingsOptions": {
+            "duration": {
+                "type": "Length",
+                "label": {
+                    "en": "Duration",
+                    "fr": "Durée"
+                },
+                "options": {
+                    "unitChoices": [{ "value": "s", "label": "s" }]
+                }
+            }
+        }
+    }
+}
