@@ -8,8 +8,8 @@
             "backgroundColor": {
                 "type": "Color",
                 "label": {
-                    "en": "Text Background",
-                    "fr": "Background du Texte"
+                    "en": "Background color",
+                    "fr": "Couleur du fond"
                 },
                 "bindable": true,
                 "options": {
@@ -21,8 +21,8 @@
             "duration": {
                 "type": "Length",
                 "label": {
-                    "en": "Duration",
-                    "fr": "Durée"
+                    "en": "Hide after",
+                    "fr": "Cacher après"
                 },
                 "options": {
                     "unitChoices": [{ "value": "s", "label": "s" }]
