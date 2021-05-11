@@ -31,6 +31,8 @@ export default {
     },
     computed: {
         show() {
+            if (window.__WW_IS_PRERENDER__) return true;
+
             /* wwEditor:start */
             if (this.isEditing) {
                 return this.forceDisplay;
@@ -107,7 +109,6 @@ export default {
     },
     mounted() {
         /* wwFront:start */
-        //Do not open popup in prerender
         this.startLoadingTimeout();
         /* wwFront:end */
     },
