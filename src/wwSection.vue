@@ -91,6 +91,8 @@ export default {
         /* wwEditor:start */
         setForceDisplay() {
             setTimeout(() => {
+                console.log(this.selectedSection.uid, this.uid);
+
                 if (this.selectedSection.uid === this.uid) {
                     this.forceDisplay = true;
                 } else if (this.$el.querySelector('[data-is-selected]')) {
