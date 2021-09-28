@@ -15,11 +15,6 @@ export default {
         wwEditorState: Object,
         /* wwEditor:end */
     },
-    wwDefaultContent: {
-        duration: wwLib.responsive('3s'),
-        wwObjects: [],
-        backgroundColor: wwLib.responsive('#FFFFFF'),
-    },
     data() {
         return {
             closed: false,
