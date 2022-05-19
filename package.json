@@ -7,6 +7,6 @@
     },
     "dependencies": {},
     "devDependencies": {
-        "@weweb/cli": "github:weweb-team/weweb-cli#webapp"
+        "@weweb/cli": "latest"
     }
 }
