@@ -18,10 +18,6 @@ export default {
     data() {
         return {
             closed: false,
-
-            /* wwEditor:start */
-            forceDisplay: false,
-            /* wwEditor:end */
         };
     },
     computed: {
@@ -30,7 +26,7 @@ export default {
 
             /* wwEditor:start */
             if (this.isEditing) {
-                return this.forceDisplay;
+                return this.wwEditorState.isSelected || this.wwEditorState.hasASelectedChild;
             } else {
                 return !this.closed;
             }
@@ -41,7 +37,7 @@ export default {
 
         isEditing() {
             /* wwEditor:start */
-            return this.wwEditorState.editMode === wwLib.wwEditorHelper.EDIT_MODES.EDITION;
+            return this.wwEditorState.isEditing;
             /* wwEditor:end */
             // eslint-disable-next-line no-unreachable
             return false;
@@ -51,30 +47,17 @@ export default {
         selectedSection() {
             return this.$store.getters['manager/getSelectedSection'];
         },
-        selectedObjects() {
-            return this.$store.getters['manager/getSelectedObjects'];
-        },
         /* wwEditor:end */
     },
     /* wwEditor:start */
     watch: {
         isEditing() {
-            this.forceDisplay = false;
             if (!this.isEditing) {
                 this.closed = false;
                 this.startLoadingTimeout();
             } else {
                 this.closed = true;
             }
-        },
-        selectedSection: {
-            deep: true,
-            handler() {
-                this.setForceDisplay();
-            },
-        },
-        selectedObjects() {
-            this.setForceDisplay();
         },
     },
     /* wwEditor:end */
@@ -87,20 +70,6 @@ export default {
                 this.closed = true;
             }, delay * 1000);
         },
-
-        /* wwEditor:start */
-        setForceDisplay() {
-            setTimeout(() => {
-                if (this.selectedSection.uid === this.uid) {
-                    this.forceDisplay = true;
-                } else if (this.$el.querySelector('[data-is-selected]')) {
-                    this.forceDisplay = true;
-                } else {
-                    this.forceDisplay = false;
-                }
-            }, 100);
-        },
-        /* wwEditor:end */
     },
     mounted() {
         /* wwFront:start */
