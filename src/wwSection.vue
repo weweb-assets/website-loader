@@ -97,7 +97,7 @@ export default {
         width: 100%;
         height: 100%;
 
-        /deep/ .ww-layout-item {
+        :deep(.ww-layout-item) {
             width: 100%;
         }
     }
