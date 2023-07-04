@@ -4,31 +4,6 @@ export default {
             en: 'Website Loader',
         },
         icon: 'fontawesome/solid/spinner',
-        styleOptions: {
-            backgroundColor: {
-                type: 'Color',
-                label: {
-                    en: 'Background color',
-                    fr: 'Couleur du fond',
-                },
-                bindable: true,
-                options: {
-                    nullable: true,
-                },
-            },
-        },
-        settingsOptions: {
-            duration: {
-                type: 'Length',
-                label: {
-                    en: 'Hide after',
-                    fr: 'Cacher après',
-                },
-                options: {
-                    unitChoices: [{ value: 's', label: 's' }],
-                },
-            },
-        },
     },
     properties: {
         backgroundColor: {
@@ -43,6 +18,7 @@ export default {
             },
             responsive: true,
             defaultValue: '#FFFFFF',
+            classes: true,
         },
         duration: {
             type: 'Length',
