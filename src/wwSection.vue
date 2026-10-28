@@ -43,11 +43,6 @@ export default {
             return false;
         },
 
-        /* wwEditor:start */
-        selectedSection() {
-            return this.$store.getters['manager/getSelectedSection'];
-        },
-        /* wwEditor:end */
     },
     /* wwEditor:start */
     watch: {
